@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Rezerwacja stolika | Kawowa Przystań</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/formularze.css" />
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">Kawowa Przystań</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.html">O nas</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Nasze Menu</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="kontaktDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Kontakt
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="kontaktDropdown">
+            <li><a class="dropdown-item active" href="formularz_rezerwacja.html">Zarezerwuj stolik</a></li>
+            <li><a class="dropdown-item" href="formularz_kontakt.html">Formularz kontaktowy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Rezerwacja -->
+<div class="container py-5" style="max-width: 600px;">
+  <h1 class="display-6 text-center mb-4">Rezerwacja stolika</h1>
+  <p class="text-center mb-4 text-muted">
+    Wypełnij krótki formularz, aby zarezerwować stolik w naszej kawiarni.<br>
+    Po wysłaniu formularza potwierdzimy rezerwację mailowo lub telefonicznie.
+    Jeśli w ciągu 30 minut nie skontaktujemy się z Tobą, prosimy o kontakt telefoniczy.
+  </p>
+  <form id="reservationForm" novalidate>
+    <!-- Imię i nazwisko -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Imię i nazwisko</label>
+      <input type="text" class="form-control" id="name" name="name" required
+             placeholder="Wpisz swoje imię i nazwisko"
+             pattern="^[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż\s\-]{3,}$">
+      <div class="invalid-feedback">Podaj imię i nazwisko (min. 3 znaki). Nie może zawierać cyfr i/lub znaków specjalnych.</div>
+    </div>
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Adres e-mail</label>
+      <input type="email" class="form-control" id="email" name="email" required placeholder="np. jan.kowalski@email.com">
+      <div class="invalid-feedback">Podaj poprawny adres e-mail. Adres email musi zawierać litery alfabetu łacińskiego. </div>
+    </div>
+    <!-- Telefon -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Numer telefonu</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required placeholder="np. 123456789 (bez spacji i numeru kierunkowego)">
+      <div class="invalid-feedback">Podaj poprawny numer telefonu. Podaj dokładnie 9 cyfr np. 123123123. Nie używaj spacji</div>
+    </div>
+    <!-- Data (kalendarz) -->
+    <div class="mb-3">
+      <label for="date" class="form-label">Data rezerwacji</label>
+      <input type="date" class="form-control" id="date" name="date" required>
+      <div class="invalid-feedback">Wybierz dzień rezerwacji.</div>
+    </div>
+    <!-- Liczba osób (radio) -->
+    <div class="mb-3" id="peopleGroup">
+      <label class="form-label d-block mb-2">Liczba osób</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="people" id="people2" value="1-2" required>
+        <label class="form-check-label" for="people2">1-2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="people" id="people4" value="3-4">
+        <label class="form-check-label" for="people4">3-4</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="people" id="people5" value="5-8">
+        <label class="form-check-label" for="people5">5-8</label>
+      </div>
+      <div class="invalid-feedback" id="peopleFeedback">Wybierz liczbę osób.</div>
+    </div>
+    <!-- Godzina (select) -->
+    <div class="mb-3">
+      <label for="time" class="form-label">Godzina rezerwacji</label>
+      <select class="form-select" id="time" name="time" required>
+        <option value="">Wybierz godzinę...</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+      </select>
+      <div class="invalid-feedback">Wybierz godzinę rezerwacji.</div>
+    </div>
+    <!-- Checkbox: udogodnienia -->
+    <div class="mb-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="udogodnienia" name="udogodnienia">
+        <label class="form-check-label" for="udogodnienia">
+          Potrzebuję stolika z miejscem na wózek lub stolik dla dziecka.
+        </label>
+      </div>
+    </div>
+    <!-- Uwagi (pole tekstowe) -->
+    <div class="mb-3">
+      <label for="message" class="form-label">Dodatkowe uwagi</label>
+      <textarea class="form-control" id="message" name="message" rows="3" placeholder="Napisz, jeśli masz szczególne życzenia lub uwagi (opcjonalne)"></textarea>
+    </div>
+    <!-- Przyciski -->
+    <div class="d-flex gap-3 justify-content-center">
+      <button type="submit" class="btn btn-primary px-4">Zarezerwuj</button>
+      <button type="reset" class="btn btn-outline-secondary px-4">Wyczyść</button>
+    </div>
+  </form>
+</div>
+
+<!-- Footer-->
+<footer class="py-4 bg-dark mt-5">
+  <div class="container text-center">
+    <p class="m-0 text-white">Copyright &copy; Kawowa Przystań 2025</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/formularz.js"></script>
+</body>
+</html>

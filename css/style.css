@@ -1,0 +1,101 @@
+:root {
+    --coffee1: #EDE0D4;
+    --coffee2: #E6CCB2;
+    --coffee3: #DDB892;
+    --coffee4: #B08968;
+    --coffee5: #7F5539;
+    --coffee6: #9C6644;
+    --accent-blue: #e9f0ec;
+}
+
+/* Tło strony i ogólna typografia */
+body {
+    background: linear-gradient(120deg, var(--coffee1) 0%, var(--accent-blue) 100%);
+    min-height: 100vh;
+    color: var(--coffee6);
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, var(--coffee5) 60%, var(--coffee6) 100%) !important;
+    box-shadow: 0 2px 12px rgba(127,85,57,0.08);
+}
+.navbar-brand,
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+    color: var(--coffee1) !important;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown-item:hover {
+    color: var(--coffee3) !important;
+    background: none;
+}
+.dropdown-menu {
+    background: var(--coffee2);
+}
+.dropdown-item {
+    color: var(--coffee6);
+}
+.dropdown-item:hover {
+    background: var(--coffee3);
+    color: var(--coffee1);
+}
+
+/* Przyciski Bootstrap */
+.btn-primary {
+    background-color: var(--coffee6);
+    border-color: var(--coffee6);
+    color: var(--coffee1);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: background .2s;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--coffee4);
+    border-color: var(--coffee5);
+    color: var(--coffee1);
+}
+
+/* Karty ogólne (np. na stronie głównej) */
+.card {
+    background: var(--coffee2);
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(127,85,57,0.10);
+}
+.card-title {
+    color: var(--coffee5);
+    font-weight: 700;
+}
+.card-footer {
+    background: transparent;
+    border: none;
+}
+
+/* Karuzela */
+.carousel-inner {
+    background: var(--accent-blue);
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(127,85,57,0.08);
+}
+.carousel-item img {
+    border-radius: 1rem;
+    background: var(--coffee2);
+}
+
+/* Footer */
+footer {
+    background: var(--coffee5) !important;
+    color: var(--coffee1);
+}
+
+/* Małe dostosowania responsywne */
+@media (max-width: 767.98px) {
+    .carousel-item img {
+        min-height: 120px;
+    }
+}

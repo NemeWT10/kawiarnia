@@ -1,0 +1,28 @@
+/* Styl dla niepoprawnych pól */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #e0565b;
+    box-shadow: 0 0 0 0.15rem rgba(224,86,91,.09);
+    color: #7F5539;
+    background-color: #fff;  /* lub po prostu nie nadpisuj backgroundu */
+}
+
+.form-check.is-invalid .form-check-input {
+    border-color: #e0565b;
+    box-shadow: 0 0 0 0.15rem rgba(224,86,91,.2);
+}
+
+.form-label.is-invalid {
+    color: #e0565b;
+    font-weight: 600;
+}
+
+.invalid-feedback {
+    color: #e0565b;
+    font-size: 0.98rem;
+    padding-top: 0.2rem;
+}
+
+input[type="date"].form-control {
+    min-width: 180px;
+}

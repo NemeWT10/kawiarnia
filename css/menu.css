@@ -1,0 +1,123 @@
+:root {
+    --coffee1: #EDE0D4;
+    --coffee2: #E6CCB2;
+    --coffee3: #DDB892;
+    --coffee4: #B08968;
+    --coffee5: #7F5539;
+    --coffee6: #9C6644;
+    --accent-blue: #e9f0ec;
+}
+
+body {
+    /* menu.html może mieć subtelnie inny odcień tła */
+    background: linear-gradient(120deg, var(--coffee1) 60%, var(--accent-blue) 100%);
+}
+
+/* KARTY MENU */
+.menu-card {
+    transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(127,85,57,0.23);
+    background: var(--coffee2);
+}
+
+.menu-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 4px solid #f7e5c8;
+    margin: 24px auto 16px auto;
+    display: block;
+    box-shadow: 0 2px 10px rgba(180,160,100,0.08);
+    background: #fffdf8;
+    transition: filter 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.menu-card:hover .menu-img {
+    filter: brightness(1.08) saturate(1.1) blur(0.5px);
+    transform: scale(1.14);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coffee6);
+}
+
+.price-tag {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--coffee5);
+}
+
+.allergens-toggle {
+    cursor: pointer;
+    color: #278878; /* niebiesko-zielony akcent */
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.allergens-list {
+    background: var(--accent-blue);
+    border-left: 4px solid var(--coffee3);
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.98rem;
+    margin-top: 0.5rem;
+    color: var(--coffee5);
+}
+
+footer {
+    background: var(--coffee5) !important;
+    color: var(--coffee1);
+}
+
+.card-body {
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    .menu-img {
+        height: 150px;
+    }
+}
+
+/* Ogólny kontener menu do efektu hover */
+.menu-section-hover .menu-card {
+    transition: filter 0.3s, opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Efekt: podczas hover na CAŁYM kontenerze, wszystkie karty mniej widoczne */
+.menu-section-hover.hover-active .menu-card {
+    filter: brightness(0.93) grayscale(30%);
+    opacity: 0.67;
+    z-index: 0;
+    transform: scale(1);
+    box-shadow: 0 2px 14px rgba(127,85,57,0.11);
+}
+
+/* Karta, która jest HOVER - wyłącz efekt i podkreśl mocniej */
+.menu-section-hover .menu-card.menu-card-hovered {
+    filter: none !important;
+    opacity: 1 !important;
+    z-index: 2;
+    transform: scale(1.07) translateY(-10px);
+    box-shadow: 0 12px 48px 0 rgba(127,85,57,0.20), 0 2px 24px 0 rgba(0,0,0,0.07);
+}
+
+/* Dodatkowo cień dla powiększonego zdjęcia */
+.menu-card.menu-card-hovered .menu-img {
+    box-shadow: 0 6px 48px 0 rgba(124,100,68,0.19), 0 2px 14px 0 rgba(100,80,60,0.11);
+    border: 3px solid var(--coffee3);
+}
+
+/* Kursor powiększalny */
+.menu-card {
+    cursor: pointer;
+}

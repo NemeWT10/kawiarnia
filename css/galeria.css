@@ -1,0 +1,60 @@
+:root {
+    --coffee1: #EDE0D4;
+    --coffee2: #E6CCB2;
+    --coffee3: #DDB892;
+    --coffee4: #B08968;
+    --coffee5: #7F5539;
+    --coffee6: #9C6644;
+    --accent-blue: #e9f0ec;
+}
+
+/* Efekt hover na zdjęciach */
+.gallery-img {
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s, opacity 0.3s;
+    border-radius: 16px;
+    box-shadow: 0 1px 6px rgba(127,85,57,0.08);
+    background: var(--coffee1);
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+
+/* Kontener do efektu przyciemniania */
+.gallery-section-hover .gallery-img {
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s, opacity 0.3s;
+}
+
+/* Przyciemnienie wszystkich, gdy trwa hover na jednym */
+.gallery-section-hover.hover-active .gallery-img {
+    filter: brightness(0.72) grayscale(18%);
+    opacity: 0.7;
+    z-index: 0;
+    box-shadow: 0 1px 4px rgba(127,85,57,0.07);
+}
+
+/* Zdjęcie aktywne (hover) – wyraźne, większy cień */
+.gallery-section-hover .gallery-img.gallery-img-hovered {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: scale(1.15);
+    z-index: 2;
+    box-shadow: 0 10px 32px 0 rgba(124,100,68,0.18), 0 2px 16px 0 rgba(100,80,60,0.12);
+    border: 3px solid var(--coffee3);
+}
+
+/* Nieregularna siatka (masonry) */
+@media (min-width: 768px) {
+    .masonry {
+        column-count: 3;
+        column-gap: 1.5rem;
+    }
+}
+@media (max-width: 767.98px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+}
